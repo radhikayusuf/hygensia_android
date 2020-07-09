@@ -9,7 +9,7 @@ android {
     buildToolsVersion rootProject.buildToolVersion
 
     defaultConfig {
-        applicationId "id.radhika.app"
+        applicationId "id.hygensia.android"
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
         versionCode 1
@@ -42,6 +42,7 @@ android {
 dependencies {
     implementation project(path: ':lib_mvvm')
     implementation project(path: ':feature_dummy')
+    implementation project(path: ':feature_home')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
 
     // Architecture Components

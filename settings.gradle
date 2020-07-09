@@ -1,4 +1,6 @@
-rootProject.name='starterkit-app'
+include ':feature_home'
+include ':feature_nearesttrashcan'
+rootProject.name='hygensia_android'
 include ':application'
 include ':lib_data'
 include ':lib_ui'

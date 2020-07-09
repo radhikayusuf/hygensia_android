@@ -1,0 +1,5 @@
+<resources>
+    <string name="text_tempat_sampah_terdekat">Tempat Sampah Terdekat</string>
+    <string name="app_name">Hygensia</string>
+    <string name="text_sudah_tau_jenis_jenis_sampah">Sudah tau jenis - jenis sampah?</string>
+</resources>

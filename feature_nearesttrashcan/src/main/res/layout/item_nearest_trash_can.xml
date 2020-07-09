@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardContent"
+        style="@style/ClickableContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/dimens_16dp"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:layout_marginEnd="@dimen/dimens_48dp"
+        android:layout_marginBottom="@dimen/dimens_16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/dimens_16dp">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="@dimen/dimens_48dp"
+                android:layout_height="@dimen/dimens_48dp"
+                android:layout_marginTop="@dimen/dimens_4dp"
+                android:src="@drawable/art_dummy_trash_can"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <id.radhika.lib.ui.component.LabelComp
+                android:id="@+id/labelTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_16dp"
+                android:text="Tempat Sampah Dago"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/size_16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <id.radhika.lib.ui.component.LabelComp
+                android:id="@+id/labelDesc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_16dp"
+                android:layout_marginTop="@dimen/dimens_4dp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text="Berada di dekat rumah sakit, pertigaan ITB"
+                android:textColor="@color/colorTextSecondary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/image"
+                app:layout_constraintTop_toBottomOf="@id/labelTitle" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimens_16dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:layout_width="@dimen/dimens_20dp"
+                    android:layout_height="@dimen/dimens_20dp"
+                    android:src="@drawable/ic_baseline_delete_24"
+                    android:tint="@color/colorLibPrimary" />
+
+                <ImageView
+                    android:layout_width="@dimen/dimens_20dp"
+                    android:layout_height="@dimen/dimens_20dp"
+                    android:src="@drawable/ic_baseline_delete_24"
+                    android:tint="@color/colorRed" />
+
+                <ImageView
+                    android:layout_width="@dimen/dimens_20dp"
+                    android:layout_height="@dimen/dimens_20dp"
+                    android:src="@drawable/ic_baseline_delete_24"
+                    android:tint="@color/colorBlueOcean" />
+
+                <ImageView
+                    android:layout_width="@dimen/dimens_20dp"
+                    android:layout_height="@dimen/dimens_20dp"
+                    android:src="@drawable/ic_baseline_delete_24"
+                    android:tint="@color/colorYellow" />
+
+                <ImageView
+                    android:layout_width="@dimen/dimens_20dp"
+                    android:layout_height="@dimen/dimens_20dp"
+                    android:src="@drawable/ic_baseline_delete_24"
+                    android:tint="@color/colorBlack" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="@dimen/dimens_20dp"
+                android:layout_height="@dimen/dimens_20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:src="@drawable/ic_verified"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimens_1dp"
+            android:layout_gravity="bottom"
+            android:alpha="0.5"
+            android:background="@color/colorGray" />
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

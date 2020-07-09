@@ -12,7 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="xxxxxxxxxx" />
+
+        <activity android:name="id.hygensia.feature.home.screen.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="text_berita_home">Berita</string>
+    <string name="text_beranda_home">Beranda</string>
+    <string name="text_informasi_home">Informasi</string>
+    <string name="text_transaksi_home">Transaksi</string>
+    <string name="text_newsletter_home">Newsletter</string>
+    <string name="text_akun_home">Akun</string>
+
+</resources>
