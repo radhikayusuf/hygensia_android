@@ -121,6 +121,9 @@ class NearestTrashCanScreen :
                     }
                     BottomSheetBehavior.STATE_SETTLING -> {
                     }
+                    BottomSheetBehavior.STATE_HALF_EXPANDED -> {
+
+                    }
                 }
             }
         })

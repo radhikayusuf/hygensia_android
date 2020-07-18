@@ -1,0 +1,46 @@
+<resources>
+    <string name="text_kata_sandi_lama">Kata Sandi Lama</string>
+    <string name="text_kata_sandi_baru">Kata Sandi Baru</string>
+    <string name="text_ulangi_kata_sandi_baru">Ulangi Kata Sandi Baru</string>
+    <string name="text_ubah">Ubah</string>
+    <string name="text_lupa_password_ya">Lupa password ya?</string>
+    <string name="text_tenang_masukin_email_terdaftar_kamu_ke_kolom_dibawah_ini_nanti_kami_bantu_untuk_me_reset_password_kamu">Tenang, masukin email terdaftar kamu ke kolom dibawah ini, nanti kami bantu untuk me-reset password kamu.</string>
+    <string name="text_email">Email</string>
+    <string name="text_daftar">Daftar</string>
+    <string name="text_password">Password</string>
+    <string name="text_lupa_password">Lupa password?</string>
+    <string name="text_nama_panjang">Nama Panjang*</string>
+    <string name="text_username">Username*</string>
+    <string name="text_nomor_telepon">Nomor Telepon*</string>
+    <string name="text_konfirmasi_password">Konfirmasi Password*</string>
+    <string name="text_email2">Email*</string>
+    <string name="text_password2">Password*</string>
+    <string name="text_sudah_punya_akun">Sudah Punya Akun? Masuk</string>
+    <string name="text_masuk">Masuk</string>
+
+    <string name="text_harap_masukan_nama">Harap isi nama lengkap</string>
+    <string name="text_harap_masukan_username">Harap isi username</string>
+    <string name="text_harap_masukan_email">Harap isi email</string>
+    <string name="text_format_email_tidak_sesuai">Format email tidak sesuai</string>
+    <string name="text_harap_masukan_nomor_telepon">Harap masukan nomor telepon</string>
+    <string name="text_harap_masukan_password">Harap masukan password</string>
+    <string name="text_harap_isi_nama_dengan_minimal_3_karakter">Harap isi Nama Lengkap dengan minimal 3 karakter</string>
+    <string name="text_phonenumber_minimal_10_karakter">Minimal Nomor Telepon 10 Karakter </string>
+    <string name="text_harap_masukan_password_baru">Harap masukan password naru</string>
+    <string name="text_harap_masukan_password_6_karakter">Harap masukan password minimal 6 karakter</string>
+    <string name="text_kata_sandi_baru_tidak_boleh_sama">Kata sandi baru tidak boleh sama</string>
+    <string name="text_password_dan_password_konfirmasi_tidak_sesuai">Konfirmasi Password tidak sesuai</string>
+    <string name="text_password_dan_password_baru_konfirmasi_tidak_sesuai">Konfirmasi Password baru tidak sesuai</string>
+
+    <string name="text_kuota">Kuota</string>
+    <string name="text_data_diri">Data Diri</string>
+    <string name="text_ubah_kata_sandi">Ubah Kata Sandi</string>
+    <string name="text_syarat_dan_ketentuan">Syarat Dan Ketentuan</string>
+    <string name="text_kebijakan_privasi">Kebijakan Privasi</string>
+    <string name="text_faq">FAQ</string>
+    <string name="text_care_Center">Care Center</string>
+    <string name="text_keluar">Keluar</string>
+    <string name="text_pendaftaran_berhasil_register">Pendaftaran Berhasil</string>
+    <string name="text_pendaftaran_berhasil_desc_register">Selanjutnya, cek emailmu untuk memverifikasi email yang kamu gunakan, ditunggu!</string>
+
+</resources>

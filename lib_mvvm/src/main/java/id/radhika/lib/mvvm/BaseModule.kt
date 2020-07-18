@@ -2,6 +2,8 @@ package id.radhika.lib.mvvm
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.google.gson.Gson
+import id.radhika.lib.data.model.user.UserResponseModel
 
 /**
  * Created by Radhika Yusuf Alifiansyah
@@ -10,6 +12,13 @@ import android.content.SharedPreferences
 abstract class BaseModule {
 
     lateinit var application: (() -> Context)
+    lateinit var baseUrl: (() -> String)
+    lateinit var tokenCaptor: (() -> String?)
+    lateinit var userDataCaptor: (() -> UserResponseModel?)
+
+    val token get() = if (::tokenCaptor.isInitialized) tokenCaptor.invoke() else null
+    val userData get() = if (::userDataCaptor.isInitialized) userDataCaptor.invoke() else null
+    val gson by lazy { Gson() }
 
     fun createPref(): SharedPreferences =
         application.invoke().getSharedPreferences(BuildConfig.LIBRARY_PACKAGE_NAME, Context.MODE_PRIVATE)

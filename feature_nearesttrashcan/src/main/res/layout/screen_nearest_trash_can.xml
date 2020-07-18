@@ -79,7 +79,9 @@
                     android:id="@+id/scrollView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/colorRootBackground">
+                    android:background="@color/colorRootBackground"
+                    android:clipToPadding="false"
+                    android:paddingBottom="?attr/actionBarSize">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -105,16 +107,14 @@
                             android:layout_marginStart="@dimen/dimens_24dp"
                             android:layout_marginTop="@dimen/dimens_8dp"
                             android:layout_marginEnd="@dimen/dimens_24dp"
-                            android:layout_marginBottom="@dimen/dimens_16dp"
                             android:text="@string/text_sudah_tau_jenis_jenis_sampah"
                             android:textColor="@color/colorTextPrimary"
-                            android:textSize="@dimen/size_18sp"
+                            android:textSize="@dimen/size_16sp"
                             android:textStyle="bold" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="@dimen/dimens_40dp"
                             android:orientation="vertical">
 
                             <LinearLayout
@@ -189,84 +189,47 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
+                        <id.radhika.lib.ui.component.LabelComp
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                            android:layout_marginStart="@dimen/dimens_24dp"
+                            android:layout_marginTop="@dimen/dimens_8dp"
+                            android:layout_marginEnd="@dimen/dimens_24dp"
+                            android:layout_marginBottom="@dimen/dimens_16dp"
+                            android:text="Daftarkan tempat sampah didekatmu !"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="@dimen/size_16sp"
+                            android:textStyle="bold" />
+
+                        <androidx.cardview.widget.CardView
+                            style="@style/ClickableContent"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimens_144dp"
+                            android:layout_marginStart="@dimen/dimens_24dp"
+                            android:layout_marginEnd="@dimen/dimens_24dp"
+                            android:layout_marginBottom="@dimen/dimens_8dp"
+                            app:cardCornerRadius="@dimen/dimens_8dp">
+
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
 
-                                <androidx.cardview.widget.CardView
+                                <ImageView
                                     android:layout_width="0dp"
-                                    android:layout_height="@dimen/dimens_96dp"
-                                    android:layout_marginStart="@dimen/dimens_24dp"
-                                    android:layout_marginTop="@dimen/dimens_16dp"
-                                    android:layout_marginBottom="@dimen/dimens_8dp"
-                                    android:layout_weight="1"
-                                    app:cardBackgroundColor="@color/colorLibPrimary"
-                                    app:cardCornerRadius="@dimen/dimens_16dp">
-
-                                </androidx.cardview.widget.CardView>
-
-                                <View
-                                    android:layout_width="@dimen/dimens_16dp"
-                                    android:layout_height="1dp" />
-
-                                <androidx.cardview.widget.CardView
-                                    android:layout_width="0dp"
-                                    android:layout_height="@dimen/dimens_96dp"
-                                    android:layout_marginTop="@dimen/dimens_16dp"
-                                    android:layout_marginEnd="@dimen/dimens_24dp"
-                                    android:layout_marginBottom="@dimen/dimens_8dp"
-                                    android:layout_weight="1"
-                                    app:cardBackgroundColor="@color/colorRed"
-                                    app:cardCornerRadius="@dimen/dimens_16dp">
-
-                                </androidx.cardview.widget.CardView>
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.4"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/art_dummy_trash_square" />
 
                             </LinearLayout>
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <androidx.cardview.widget.CardView
-                                    android:layout_width="0dp"
-                                    android:layout_height="@dimen/dimens_96dp"
-                                    android:layout_marginStart="@dimen/dimens_24dp"
-                                    android:layout_marginTop="@dimen/dimens_8dp"
-                                    android:layout_marginBottom="@dimen/dimens_16dp"
-                                    android:layout_weight="1"
-                                    app:cardBackgroundColor="@color/colorYellow"
-                                    app:cardCornerRadius="@dimen/dimens_16dp">
-
-                                </androidx.cardview.widget.CardView>
-
-                                <View
-                                    android:layout_width="@dimen/dimens_16dp"
-                                    android:layout_height="1dp" />
-
-                                <androidx.cardview.widget.CardView
-                                    android:layout_width="0dp"
-                                    android:layout_height="@dimen/dimens_96dp"
-                                    android:layout_marginTop="@dimen/dimens_8dp"
-                                    android:layout_marginEnd="@dimen/dimens_24dp"
-                                    android:layout_marginBottom="@dimen/dimens_16dp"
-                                    android:layout_weight="1"
-                                    app:cardBackgroundColor="@color/colorBlueOcean"
-                                    app:cardCornerRadius="@dimen/dimens_16dp">
-
-                                </androidx.cardview.widget.CardView>
-
-                            </LinearLayout>
-
-                        </LinearLayout>
+                        </androidx.cardview.widget.CardView>
 
                     </LinearLayout>
+
                 </androidx.core.widget.NestedScrollView>
 
             </LinearLayout>

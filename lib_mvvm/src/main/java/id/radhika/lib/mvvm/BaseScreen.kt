@@ -109,4 +109,11 @@ abstract class BaseScreen<B : ViewBinding, VM : BaseVM<D>, D : BaseDao>(
             startActivity(it)
         }
     }
+
+    fun openActivity(from: BaseScreen<*, *, *>, clazz: Class<*>, clear: Boolean = false){
+        Intent(from.requireContext(), clazz).let {
+            if (clear) it.flags = (Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            startActivity(it)
+        }
+    }
 }

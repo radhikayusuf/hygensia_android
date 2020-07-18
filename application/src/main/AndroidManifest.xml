@@ -15,7 +15,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="xxxxxxxxxx" />
+            android:value="AIzaSyCTdVeAmK8vKD5mnczFZAW_k3bE0OlRTkQ" />
 
         <activity android:name="id.hygensia.feature.home.screen.HomeActivity">
             <intent-filter>

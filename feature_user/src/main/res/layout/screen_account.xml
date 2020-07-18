@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:background="@color/colorLibPrimary"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="@dimen/dimens_24dp">
+
+
+                <ImageView
+                    android:id="@+id/image_user"
+                    android:layout_width="@dimen/dimens_104dp"
+                    android:layout_height="@dimen/dimens_104dp"
+                    android:src="@drawable/art_user" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <id.radhika.lib.ui.component.LabelComp
+                    android:id="@+id/labelFullName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Aldo Sirtoitet"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/size_24sp"
+                    android:textStyle="bold" />
+
+                <id.radhika.lib.ui.component.LabelComp
+                    android:id="@+id/labelNumberPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="081293029828"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/size_16sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="@dimen/dimens_24dp"
+            app:layout_anchor="@+id/linearLayout"
+            app:layout_anchorGravity="center">
+
+            <id.radhika.lib.ui.component.LabelComp
+                android:id="@+id/labelKuota"
+                style="@style/ClickableContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dimens_14dp"
+                android:paddingBottom="@dimen/dimens_14dp"
+                android:text="@string/text_kuota" />
+
+            <View
+                style="@style/view_akun"
+                android:layout_width="match_parent" />
+
+
+            <id.radhika.lib.ui.component.LabelComp
+                android:id="@+id/labelPersonalData"
+                style="@style/ClickableContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dimens_14dp"
+                android:paddingBottom="@dimen/dimens_14dp"
+                android:text="@string/text_data_diri" />
+
+            <View
+                style="@style/view_akun"
+                android:layout_width="match_parent" />
+
+            <id.radhika.lib.ui.component.LabelComp
+                android:id="@+id/labelChangePassword"
+                style="@style/ClickableContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dimens_14dp"
+                android:paddingBottom="@dimen/dimens_14dp"
+                android:text="@string/text_ubah_kata_sandi" />
+
+            <View
+                style="@style/view_akun"
+                android:layout_width="match_parent" />
+
+            <id.radhika.lib.ui.component.LabelComp
+                android:id="@+id/labelTermAndCondition"
+                style="@style/ClickableContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dimens_14dp"
+                android:paddingBottom="@dimen/dimens_14dp"
+                android:text="@string/text_syarat_dan_ketentuan" />
+
+            <View
+                style="@style/view_akun"
+                android:layout_width="match_parent" />
+
+            <id.radhika.lib.ui.component.LabelComp
+                android:id="@+id/labelPrivacyPolicy"
+                style="@style/ClickableContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dimens_14dp"
+                android:paddingBottom="@dimen/dimens_14dp"
+                android:text="@string/text_kebijakan_privasi" />
+
+            <View
+                style="@style/view_akun"
+                android:layout_width="match_parent" />
+
+            <id.radhika.lib.ui.component.LabelComp
+                android:id="@+id/labelFaq"
+                style="@style/ClickableContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dimens_14dp"
+                android:paddingBottom="@dimen/dimens_14dp"
+                android:text="@string/text_faq" />
+
+            <View
+                style="@style/view_akun"
+                android:layout_width="match_parent" />
+
+            <id.radhika.lib.ui.component.LabelComp
+                android:id="@+id/labelCareCenter"
+                style="@style/ClickableContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dimens_14dp"
+                android:paddingBottom="@dimen/dimens_14dp"
+                android:text="@string/text_care_Center" />
+
+            <View
+                style="@style/view_akun"
+                android:layout_width="match_parent" />
+
+            <id.radhika.lib.ui.component.LabelComp
+                android:id="@+id/labelLogout"
+                style="@style/ClickableContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dimens_14dp"
+                android:paddingBottom="@dimen/dimens_14dp"
+                android:text="@string/text_keluar" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
