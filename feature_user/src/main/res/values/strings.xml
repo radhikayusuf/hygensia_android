@@ -8,6 +8,8 @@
     <string name="text_email">Email</string>
     <string name="text_daftar">Daftar</string>
     <string name="text_password">Password</string>
+    <string name="text_signup_here">Sign up here!</string>
+    <string name="text_clickhere">Click here</string>
     <string name="text_lupa_password">Lupa password?</string>
     <string name="text_nama_panjang">Nama Panjang*</string>
     <string name="text_username">Username*</string>
@@ -42,5 +44,7 @@
     <string name="text_keluar">Keluar</string>
     <string name="text_pendaftaran_berhasil_register">Pendaftaran Berhasil</string>
     <string name="text_pendaftaran_berhasil_desc_register">Selanjutnya, cek emailmu untuk memverifikasi email yang kamu gunakan, ditunggu!</string>
+    <string name="text_forgot_your_password_click_here">Forgot your password? Click here</string>
+    <string name="text_doesn_t_have_an_account_sign_up_here">Doesn’t have an account? Sign up here!</string>
 
 </resources>

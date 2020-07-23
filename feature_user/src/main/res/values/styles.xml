@@ -4,7 +4,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorLibPrimary</item>
         <item name="colorPrimaryDark">@color/colorLibPrimaryDark</item>
-        <item name="colorAccent">@color/colorLibAccent</item>
+        <item name="colorAccent">@color/colorLibPrimary</item>
     </style>
 
     <style name="UserSecondaryFragmentTheme" parent="Theme.AppCompat.Light.NoActionBar">

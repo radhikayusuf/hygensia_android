@@ -5,7 +5,8 @@
     <application>
         <activity
             android:name=".screen.UserActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/UserFragmentTheme"/>
     </application>
 
 </manifest>

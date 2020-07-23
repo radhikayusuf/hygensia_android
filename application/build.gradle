@@ -44,6 +44,7 @@ dependencies {
     implementation project(path: ':feature_dummy')
     implementation project(path: ':feature_home')
     implementation project(path: ':feature_user')
+    implementation project(path: ':feature_nearesttrashcan')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
 
     // Architecture Components

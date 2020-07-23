@@ -66,7 +66,12 @@ class LoginScreen : BaseScreen<ScreenLoginBinding, LoginVM, LoginDao>(
             vm.doLogin(email, password)
         }
         binding.labelRegister.setClickWordsRes(
-            arrayListOf(R.string.text_daftar)
+            arrayListOf(R.string.text_signup_here)
+        ) {
+            openScreen(RegisterScreen())
+        }
+        binding.forgotPassword.setClickWordsRes(
+            arrayListOf(R.string.text_clickhere)
         ) {
             openScreen(RegisterScreen())
         }

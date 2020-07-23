@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:scaleType="centerCrop"
+        android:src="@drawable/art_user_bottom_pattern"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="@dimen/dimens_48dp"
-            android:src="@drawable/art_logo_app" />
+            android:src="@drawable/logo_text_primary" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputEmail"
@@ -60,15 +67,13 @@
 
         <id.radhika.lib.ui.component.LabelComp
             android:id="@+id/forgotPassword"
-            style="@style/ClickableContent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginBottom="@dimen/dimens_56dp"
             android:paddingTop="@dimen/dimens_8dp"
             android:paddingBottom="@dimen/dimens_8dp"
-            android:text="@string/text_lupa_password"
-            app:labelType="link" />
+            android:text="@string/text_forgot_your_password_click_here" />
 
         <id.radhika.lib.ui.component.ButtonLoadingComp
             android:id="@+id/buttonLogin"
@@ -76,7 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/dimens_16dp"
             app:disabled="true"
-            app:text="Masuk"
+            app:text="Login"
             app:textSize="medium" />
 
         <id.radhika.lib.ui.component.LabelComp
@@ -84,7 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Tidak punya akun? Daftar" />
+            android:text="@string/text_doesn_t_have_an_account_sign_up_here" />
 
     </LinearLayout>
 

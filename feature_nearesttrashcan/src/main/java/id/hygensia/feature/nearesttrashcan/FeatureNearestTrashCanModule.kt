@@ -8,6 +8,8 @@ import id.radhika.lib.mvvm.BaseModule
  **/
 class FeatureNearestTrashCanModule : BaseModule() {
 
+    lateinit var screenOpenLogin: (() -> Class<*>)
+
     companion object {
         private val INSTANCE by lazy { FeatureNearestTrashCanModule() }
         fun get() = INSTANCE
