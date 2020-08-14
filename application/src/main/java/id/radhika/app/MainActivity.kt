@@ -23,6 +23,7 @@ class MainActivity : BaseActivity() {
         job = GlobalScope.launch {
             delay(800)
             startActivity(Intent(this@MainActivity, HomeActivity::class.java))
+            finish()
         }
     }
 

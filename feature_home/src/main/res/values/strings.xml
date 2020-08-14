@@ -6,5 +6,6 @@
     <string name="text_transaksi_home">Transaksi</string>
     <string name="text_newsletter_home">Newsletter</string>
     <string name="text_akun_home">Akun</string>
+    <string name="text_upload_home">Upload</string>
 
 </resources>

@@ -1,6 +1,6 @@
 package id.hygensia.feature.nearesttrashcan.screen.nearesttrashcan
 
-import id.hygensia.feature.nearesttrashcan.screen.data.TrashUseCase
+import id.hygensia.feature.nearesttrashcan.data.TrashUseCase
 import id.radhika.lib.mvvm.BaseVM
 
 /**
@@ -11,19 +11,18 @@ class NearestTrashCanVM(
     private val trashUseCase: TrashUseCase = TrashUseCase.getInstance()
 ) : BaseVM<NearestTrashCanDao>() {
 
-    private var mapIsReady = false
-
     override suspend fun onCreate() {
-        fetchNearestTrashCan()
+
     }
 
-    private suspend fun fetchNearestTrashCan() {
+    fun fetchNearestTrashCan() = launch {
+        dao.isLoading = true
         dao.markers.clear()
-        dao.markers.addAll(trashUseCase.getNearestTrashCan())
-    }
-
-    fun notifyMapIsReady() {
-        mapIsReady = true
+        trashUseCase.getNearestTrashCan().let { result ->
+            dao.markers.addAll(result)
+            dao.initiateContent = result.firstOrNull()
+        }
+        dao.isLoading = false
     }
 
     fun getSelectedLatLng(position: Int) = dao.markers[position].location

@@ -6,7 +6,7 @@
 
     <stroke
         android:width="@dimen/dimens_2dp"
-        android:color="@color/colorBlack"/>
+        android:color="@color/colorLibPrimary"/>
 
     <corners
         android:radius="@dimen/dimens_8dp"/>

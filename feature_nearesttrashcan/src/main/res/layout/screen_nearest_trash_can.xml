@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorRootBackground">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
@@ -24,6 +25,22 @@
         android:scaleType="centerCrop"
         android:src="@drawable/map"
         tools:foreground="@drawable/map" />
+
+    <FrameLayout
+        android:id="@+id/progressMap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGray"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="visible" />
+
+    </FrameLayout>
 
     <FrameLayout
         android:id="@+id/parentOfSheet"
@@ -54,20 +71,53 @@
                     android:layout_marginTop="@dimen/dimens_16dp"
                     android:background="@drawable/background_primary_button_inactive" />
 
-                <EditText
-                    style="@style/EditTextBorderPrimary"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dimens_16dp"
-                    android:layout_marginTop="@dimen/dimens_16dp"
-                    android:layout_marginEnd="@dimen/dimens_24dp"
-                    android:layout_marginBottom="@dimen/dimens_16dp"
-                    android:drawableStart="@drawable/ic_baseline_search_24"
-                    android:drawablePadding="@dimen/dimens_8dp"
-                    android:drawableTint="@color/colorTextPrimary"
-                    android:hint="Find nearest Trash can"
-                    android:imeOptions="actionSearch"
-                    android:inputType="text" />
+                    android:orientation="horizontal">
+
+                    <EditText
+                        style="@style/EditTextBorderPrimary"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimens_16dp"
+                        android:layout_marginTop="@dimen/dimens_16dp"
+                        android:layout_marginEnd="@dimen/dimens_16dp"
+                        android:layout_marginBottom="@dimen/dimens_16dp"
+                        android:layout_weight="1"
+                        android:drawableStart="@drawable/ic_baseline_search_24"
+                        android:drawablePadding="@dimen/dimens_8dp"
+                        android:drawableTint="@color/colorTextPrimary"
+                        android:hint="Find nearest Trash can"
+                        android:imeOptions="actionSearch"
+                        android:inputType="text" />
+
+                    <FrameLayout
+                        android:layout_width="@dimen/dimens_40dp"
+                        android:layout_height="@dimen/dimens_40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dimens_16dp"
+                        android:layout_marginEnd="@dimen/dimens_24dp"
+                        android:layout_marginBottom="@dimen/dimens_16dp"
+                        android:background="@drawable/background_rounded_border">
+
+                        <ImageView
+                            android:id="@+id/refreshButton"
+                            style="@style/ClickableContent"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="@dimen/dimens_4dp"
+                            android:src="@drawable/ic_baseline_refresh_24" />
+
+                        <ProgressBar
+                            android:id="@+id/progressRetry"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="@dimen/dimens_8dp" />
+
+                    </FrameLayout>
+
+                </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
@@ -99,7 +149,21 @@
                         <androidx.viewpager.widget.ViewPager
                             android:id="@+id/pagerLocation"
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/dimens_160dp" />
+                            android:layout_height="@dimen/dimens_160dp"
+                            tools:visibility="gone" />
+
+                        <FrameLayout
+                            android:id="@+id/progressPager"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimens_160dp"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <ProgressBar
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center" />
+                        </FrameLayout>
 
                         <id.radhika.lib.ui.component.LabelComp
                             android:layout_width="match_parent"
@@ -107,7 +171,7 @@
                             android:layout_marginStart="@dimen/dimens_24dp"
                             android:layout_marginTop="@dimen/dimens_8dp"
                             android:layout_marginEnd="@dimen/dimens_24dp"
-                            android:text="@string/text_sudah_tau_jenis_jenis_sampah"
+                            android:text="Apakah Kamu tahu?"
                             android:textColor="@color/colorTextPrimary"
                             android:textSize="@dimen/size_16sp"
                             android:textStyle="bold" />
@@ -123,6 +187,8 @@
                                 android:orientation="horizontal">
 
                                 <androidx.cardview.widget.CardView
+                                    android:id="@+id/cardGreen"
+                                    style="@style/ClickableContent"
                                     android:layout_width="0dp"
                                     android:layout_height="@dimen/dimens_96dp"
                                     android:layout_marginStart="@dimen/dimens_24dp"
@@ -132,6 +198,23 @@
                                     app:cardBackgroundColor="@color/colorLibPrimary"
                                     app:cardCornerRadius="@dimen/dimens_16dp">
 
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:foreground="@color/colorImageFilter"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/art_card_green_nature" />
+
+                                    <id.radhika.lib.ui.component.LabelComp
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="bottom"
+                                        android:paddingHorizontal="@dimen/dimens_16dp"
+                                        android:paddingVertical="@dimen/dimens_8dp"
+                                        android:text="Hygensia!"
+                                        android:textColor="@color/colorWhite"
+                                        android:textSize="@dimen/size_18sp" />
+
                                 </androidx.cardview.widget.CardView>
 
                                 <View
@@ -139,6 +222,8 @@
                                     android:layout_height="1dp" />
 
                                 <androidx.cardview.widget.CardView
+                                    android:id="@+id/cardRed"
+                                    style="@style/ClickableContent"
                                     android:layout_width="0dp"
                                     android:layout_height="@dimen/dimens_96dp"
                                     android:layout_marginTop="@dimen/dimens_16dp"
@@ -147,6 +232,27 @@
                                     android:layout_weight="1"
                                     app:cardBackgroundColor="@color/colorRed"
                                     app:cardCornerRadius="@dimen/dimens_16dp">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/art_card_red_trash" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/colorImageFilter" />
+
+                                    <id.radhika.lib.ui.component.LabelComp
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="bottom"
+                                        android:paddingHorizontal="@dimen/dimens_16dp"
+                                        android:paddingVertical="@dimen/dimens_8dp"
+                                        android:text="Our World"
+                                        android:textColor="@color/colorWhite"
+                                        android:textSize="@dimen/size_18sp" />
 
                                 </androidx.cardview.widget.CardView>
 
@@ -158,6 +264,8 @@
                                 android:orientation="horizontal">
 
                                 <androidx.cardview.widget.CardView
+                                    android:id="@+id/cardYellow"
+                                    style="@style/ClickableContent"
                                     android:layout_width="0dp"
                                     android:layout_height="@dimen/dimens_96dp"
                                     android:layout_marginStart="@dimen/dimens_24dp"
@@ -167,6 +275,27 @@
                                     app:cardBackgroundColor="@color/colorYellow"
                                     app:cardCornerRadius="@dimen/dimens_16dp">
 
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/art_card_yellow_learn" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/colorImageFilter" />
+
+                                    <id.radhika.lib.ui.component.LabelComp
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="bottom"
+                                        android:paddingHorizontal="@dimen/dimens_16dp"
+                                        android:paddingVertical="@dimen/dimens_8dp"
+                                        android:text="Jenis Sampah?"
+                                        android:textColor="@color/colorWhite"
+                                        android:textSize="@dimen/size_18sp" />
+
                                 </androidx.cardview.widget.CardView>
 
                                 <View
@@ -174,6 +303,8 @@
                                     android:layout_height="1dp" />
 
                                 <androidx.cardview.widget.CardView
+                                    android:id="@+id/cardBlue"
+                                    style="@style/ClickableContent"
                                     android:layout_width="0dp"
                                     android:layout_height="@dimen/dimens_96dp"
                                     android:layout_marginTop="@dimen/dimens_8dp"
@@ -182,6 +313,27 @@
                                     android:layout_weight="1"
                                     app:cardBackgroundColor="@color/colorBlueOcean"
                                     app:cardCornerRadius="@dimen/dimens_16dp">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/art_card_blue_ocean" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/colorImageFilter" />
+
+                                    <id.radhika.lib.ui.component.LabelComp
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="bottom"
+                                        android:paddingHorizontal="@dimen/dimens_16dp"
+                                        android:paddingVertical="@dimen/dimens_8dp"
+                                        android:text="Laut dan Plastik"
+                                        android:textColor="@color/colorWhite"
+                                        android:textSize="@dimen/size_18sp" />
 
                                 </androidx.cardview.widget.CardView>
 
@@ -202,6 +354,7 @@
                             android:textStyle="bold" />
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/cardAddTrash"
                             style="@style/ClickableContent"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/dimens_144dp"
@@ -223,6 +376,15 @@
                                     android:layout_weight="0.4"
                                     android:scaleType="centerCrop"
                                     android:src="@drawable/art_dummy_trash_square" />
+
+                                <id.radhika.lib.ui.component.LabelComp
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.6"
+                                    android:gravity="center"
+                                    android:paddingHorizontal="@dimen/dimens_24dp"
+                                    android:textSize="@dimen/size_16sp"
+                                    android:text="Segera daftarkan tempat sampah di sekitar kamu!"/>
 
                             </LinearLayout>
 

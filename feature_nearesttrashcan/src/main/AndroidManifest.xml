@@ -3,7 +3,9 @@
     package="id.hygensia.feature.nearesttrashcan">
 
     <application>
-        <activity android:name=".screen.NearestTrashCanActivity"></activity>
+        <activity
+            android:name=".screen.NearestTrashCanActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

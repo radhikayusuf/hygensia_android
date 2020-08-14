@@ -6,6 +6,7 @@
 
     <color name="colorWhite">#FFF</color>
     <color name="colorBlack">#000</color>
+    <color name="colorImageFilter">#97303030</color>
     <color name="colorWhiteSmoke">#E6E6E6</color>
     <color name="colorGray">#C7C7C7</color>
     <color name="colorRed">#FF003D</color>

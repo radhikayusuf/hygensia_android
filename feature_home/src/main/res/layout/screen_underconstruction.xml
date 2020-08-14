@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <id.radhika.lib.ui.component.SquareImageComp
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="@dimen/dimens_56dp"
+        android:padding="@dimen/dimens_16dp"
+        android:src="@drawable/art_under_construction" />
+
+    <id.radhika.lib.ui.component.LabelComp
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimens_8dp"
+        android:gravity="center"
+        android:lineSpacingExtra="@dimen/dimens_6dp"
+        android:paddingStart="@dimen/dimens_16dp"
+        android:paddingEnd="@dimen/dimens_16dp"
+        android:text="Hati hati!"
+        android:textSize="@dimen/size_28sp"
+        android:textStyle="bold" />
+
+    <id.radhika.lib.ui.component.LabelComp
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:lineSpacingExtra="@dimen/dimens_6dp"
+        android:paddingStart="@dimen/dimens_24dp"
+        android:paddingEnd="@dimen/dimens_24dp"
+        android:text="Fitur ini sedang dalam tahap pembuatan"
+        android:textSize="@dimen/size_16sp" />
+
+
+</LinearLayout>

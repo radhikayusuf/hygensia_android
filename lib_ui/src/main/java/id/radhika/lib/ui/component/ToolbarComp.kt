@@ -1,12 +1,16 @@
 package id.radhika.lib.ui.component
 
 import android.content.Context
+import android.content.Intent
+import android.graphics.drawable.Drawable
+import android.text.TextUtils
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
 import androidx.annotation.ColorInt
 import androidx.annotation.ColorRes
+import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import id.radhika.lib.ui.R
 import id.radhika.lib.ui.databinding.ToolbarCompLayoutBinding
@@ -26,11 +30,26 @@ class ToolbarComp @JvmOverloads constructor(
     private var onBackClickListener: (() -> Unit)? = null
     private var onNotificationClickListener: (() -> Unit)? = null
 
+//    var logo: Drawable
+//        get() {
+//            return binding.logo.drawable
+//        }
+//        set(value) {
+//            binding.label.visibility = View.GONE
+////            binding.frameLogo.visibility = View.VISIBLE
+////            binding.logo.setImageDrawable(value)
+//            binding.icon.visibility = View.GONE
+//        }
+
     var title: String
         get() {
             return binding.label.text.toString()
         }
         set(value) {
+            if (value.trim().isNotEmpty()) {
+//                binding.frameLogo.visibility = View.GONE
+                binding.label.visibility = View.VISIBLE
+            }
             binding.label.text = value
         }
 
@@ -39,9 +58,15 @@ class ToolbarComp @JvmOverloads constructor(
     }
 
     fun showIcon(show: Boolean) {
-        binding.icon.visibility = View.INVISIBLE
+        binding.icon.visibility = View.VISIBLE
         binding.icon.isEnabled = false
     }
+
+//    fun setLogoRes(res: Int) {
+//        ContextCompat.getDrawable(context, res)?.let { drawable ->
+//            logo = drawable
+//        }
+//    }
 
     fun showBackIcon(show: Boolean, onBackClickCallback: (() -> Unit)? = null) {
         onBackClickListener = onBackClickCallback
@@ -51,36 +76,24 @@ class ToolbarComp @JvmOverloads constructor(
             binding.icon.setImageResource(0)
             binding.icon.visibility = View.INVISIBLE
         } else {
+//            binding.frameLogo.visibility = View.GONE
             binding.icon.setImageResource(R.drawable.ic_baseline_chevron_left_24)
             binding.icon.visibility = View.VISIBLE
             binding.icon.setOnClickListener { onBackClickListener?.invoke() }
         }
     }
 
-    fun showNotification(show: Boolean,  @ColorRes color: Int? = null, onNotificationCallback: (() -> Unit)? = null) {
-        ContextCompat.getDrawable(context, R.drawable.ic_baseline_notifications_24)?.let { drawable ->
-            drawable.setTint(ContextCompat.getColor(context, color ?: R.color.colorTextPrimary))
-            binding.notification.setImageDrawable(drawable)
-        }
+    fun showNotification(show: Boolean, fromWebView: Boolean = false, onNotificationCallback: (() -> Unit)? = null) {
         onNotificationClickListener = onNotificationCallback
         binding.notification.visibility = if (show) View.VISIBLE else View.INVISIBLE
         binding.notification.isEnabled = show
         binding.notification.setOnClickListener(null)
-        if (show) binding.notification.setOnClickListener {
-            onNotificationClickListener?.invoke()
+        if (fromWebView) {
+            binding.notification.setImageResource(R.drawable.ic_baseline_language_24)
         }
-    }
 
-    fun showProfile(show: Boolean, @ColorRes color: Int? = null, onProfileClick: (() -> Unit)? = null) {
-        ContextCompat.getDrawable(context, R.drawable.ic_baseline_person_24)?.let { drawable ->
-            drawable.setTint(ContextCompat.getColor(context, color ?: R.color.colorTextPrimary))
-            binding.notification.setImageDrawable(drawable)
-        }
-        binding.notification.visibility = if (show) View.VISIBLE else View.INVISIBLE
-        binding.notification.isEnabled = show
-        binding.notification.setOnClickListener(null)
-        if (show) binding.notification.setOnClickListener {
-            onProfileClick?.invoke()
+        binding.notification.setOnClickListener {
+            onNotificationCallback?.invoke()
         }
     }
 
@@ -113,6 +126,13 @@ class ToolbarComp @JvmOverloads constructor(
     }
 
     private fun renderComponent() {
+        showNotification(false)
         addView(binding.root)
+        binding.label.maxLines = 1
+        binding.label.ellipsize = TextUtils.TruncateAt.END
+    }
+
+    companion object {
+        var forceNotificationActivityTarget: (() -> Class<*>)? = null
     }
 }

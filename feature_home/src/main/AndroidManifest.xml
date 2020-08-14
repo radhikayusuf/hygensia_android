@@ -3,7 +3,9 @@
     package="id.hygensia.feature.home">
 
     <application>
-        <activity android:name=".screen.HomeActivity"></activity>
+        <activity
+            android:name=".screen.HomeActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

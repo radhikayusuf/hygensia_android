@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager.widget.PagerAdapter
 import id.hygensia.feature.nearesttrashcan.databinding.ItemNearestTrashCanBinding
-import id.hygensia.feature.nearesttrashcan.screen.data.model.TrashCanModel
+import id.hygensia.feature.nearesttrashcan.data.model.TrashCanModel
 
 /**
  * Created by Radhika Yusuf Alifiansyah

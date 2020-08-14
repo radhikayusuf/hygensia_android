@@ -1,4 +1,4 @@
-package id.hygensia.feature.nearesttrashcan.screen.data.model
+package id.hygensia.feature.nearesttrashcan.data.model
 
 import com.google.android.gms.maps.model.LatLng
 

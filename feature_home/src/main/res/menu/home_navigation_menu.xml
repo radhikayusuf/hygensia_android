@@ -9,20 +9,20 @@
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/menu_info_home"
-        android:icon="@drawable/ic_baseline_information_24"
-        android:title="@string/text_informasi_home"
-        app:showAsAction="ifRoom" />
-
-    <item
-        android:id="@+id/menu_transaction_home"
+        android:id="@+id/menu_news_letter"
         android:icon="@drawable/ic_baseline_collections_bookmark_24"
         android:title="@string/text_newsletter_home"
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/menu_account_home"
-        android:icon="@drawable/ic_baseline_person_24"
-        android:title="@string/text_akun_home"
+        android:id="@+id/menu_upload_home"
+        android:icon="@drawable/ic_baseline_add_a_photo_24"
+        android:title="Daftarkan"
         app:showAsAction="ifRoom" />
+
+<!--    <item-->
+<!--        android:id="@+id/menu_account_home"-->
+<!--        android:icon="@drawable/ic_baseline_person_24"-->
+<!--        android:title="@string/text_akun_home"-->
+<!--        app:showAsAction="ifRoom" />-->
 </menu>

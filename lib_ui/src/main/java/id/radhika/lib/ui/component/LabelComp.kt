@@ -1,11 +1,11 @@
 package id.radhika.lib.ui.component
 
 import android.content.Context
-import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Typeface
 import android.os.Build
 import android.text.Html
+import android.text.Layout
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.method.LinkMovementMethod
@@ -13,12 +13,15 @@ import android.text.style.ClickableSpan
 import android.text.style.ForegroundColorSpan
 import android.text.util.Linkify
 import android.util.AttributeSet
+import android.util.Log
 import android.util.TypedValue
 import android.view.View
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import id.radhika.lib.ui.R
+import java.text.NumberFormat
+import java.util.*
 
 
 /**
@@ -57,6 +60,13 @@ class LabelComp @JvmOverloads constructor(
         if (isHtml) {
             setHtmlContentText()
         }
+        setLineSpacing(
+            TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP,
+                5.0f,
+                resources.displayMetrics
+            ), 1.0f
+        )
     }
 
     fun setTextStyle(tf: Typeface?) {
@@ -95,6 +105,14 @@ class LabelComp @JvmOverloads constructor(
 
     fun setHtmlText(text: String) {
         setHtmlContentText(text)
+    }
+
+    fun setRupiahFormat(price: Double) {
+        val localeID = Locale("in", "ID")
+        val numberFormat = NumberFormat.getCurrencyInstance(localeID)
+        var result = numberFormat.format(price).toString()
+        result = if (result.contains(",")) (result.split(",").getOrNull(0) ?: result) else result
+        text = result
     }
 
     fun setTextLink(isLink: Boolean, withUnderline: Boolean = false) {
@@ -144,4 +162,10 @@ class LabelComp @JvmOverloads constructor(
         movementMethod = LinkMovementMethod.getInstance()
         Linkify.addLinks(this, Linkify.WEB_URLS)
     }
+
+    fun isEllipsized() =
+        !(if (layout != null) {
+            val linez = layout.lineCount
+            (linez > 0 && layout.getEllipsisCount(linez - 1) > 0)
+        } else false)
 }

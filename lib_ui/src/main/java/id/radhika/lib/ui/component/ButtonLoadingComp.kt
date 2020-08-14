@@ -1,15 +1,14 @@
 package id.radhika.lib.ui.component
 
 import android.content.Context
-import android.graphics.Color
-import android.graphics.Typeface
+import android.graphics.*
 import android.util.AttributeSet
 import android.util.TypedValue
+import android.view.ContextThemeWrapper
 import android.view.Gravity
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.ProgressBar
-import android.widget.TextView
 import androidx.core.content.ContextCompat
 import id.radhika.lib.ui.R
 import android.R as AndroidR
@@ -26,7 +25,7 @@ class ButtonLoadingComp @JvmOverloads constructor(
     defStyleRes: Int = 0
 ) : FrameLayout(context, attrs, defStyle) {
 
-    private val progressBar = ProgressBar(context, null, AndroidR.attr.progressBarStyleSmall)
+    private val progressBar = ProgressBar(ContextThemeWrapper(context, R.style.ProgressMain), null, AndroidR.attr.progressBarStyleSmall)
     private val buttonContent = LabelComp(context)
     private var onClickListener: OnClickListener? = null
 
@@ -38,6 +37,7 @@ class ButtonLoadingComp @JvmOverloads constructor(
     private fun initAttrs(context: Context, attrs: AttributeSet) {
         val text: String
         val textSize: Int
+        val type: Int
         val allCaps: Boolean
         val disabled: Boolean
         val buttonBackground: Int
@@ -45,6 +45,7 @@ class ButtonLoadingComp @JvmOverloads constructor(
         try {
             text = ta.getString(R.styleable.ButtonLoadingComp_text) ?: ""
             textSize = ta.getInt(R.styleable.ButtonLoadingComp_textSize, 0)
+            type = ta.getInt(R.styleable.ButtonLoadingComp_type, 0)
             allCaps = ta.getBoolean(R.styleable.ButtonLoadingComp_allCaps, false)
             disabled = ta.getBoolean(R.styleable.ButtonLoadingComp_disabled, false)
             buttonBackground = ta.getResourceId(R.styleable.ButtonLoadingComp_buttonBackground, 0)
@@ -57,6 +58,12 @@ class ButtonLoadingComp @JvmOverloads constructor(
         buttonContent.text = text
         buttonContent.textSize = textSize.toFloat()
         buttonContent.isAllCaps = allCaps
+
+
+        if (type == 2) {
+            buttonContent.setTextColor(ContextCompat.getColor(context, R.color.colorLibPrimary))
+            background = ContextCompat.getDrawable(context, R.drawable.background_secondary_button)
+        }
 
         if (buttonBackground != 0) {
             background = ContextCompat.getDrawable(context, buttonBackground)

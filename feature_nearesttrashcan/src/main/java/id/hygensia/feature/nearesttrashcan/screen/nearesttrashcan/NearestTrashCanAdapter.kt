@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import id.hygensia.feature.nearesttrashcan.databinding.ItemNearestTrashCanBinding
-import id.hygensia.feature.nearesttrashcan.screen.data.model.TrashCanModel
+import id.hygensia.feature.nearesttrashcan.data.model.TrashCanModel
 
 /**
  * Created by Radhika Yusuf Alifiansyah
