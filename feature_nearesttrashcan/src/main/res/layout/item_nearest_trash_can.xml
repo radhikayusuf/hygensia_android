@@ -51,6 +51,7 @@
                 android:layout_marginTop="@dimen/dimens_4dp"
                 android:ellipsize="end"
                 android:maxLines="2"
+                android:textSize="@dimen/size_12sp"
                 android:text="Berada di dekat rumah sakit, pertigaan ITB"
                 android:textColor="@color/colorTextSecondary"
                 app:layout_constraintEnd_toEndOf="parent"
